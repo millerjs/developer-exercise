@@ -1,0 +1,118 @@
+/* Color Scheme:
+ *   primary background: #f5edf0
+ *   primary foreground: #3d2c2e
+ *   seconady foreground: #d1ccdc
+ *   tertiary foreground: #886f68
+ */
+
+
+body {
+    background: #f5edf0;
+    color: #3d2c2e;
+    font-family: "Times New Roman", Georgia, Serif;
+    margin: 0 auto;
+    min-width: 600px;
+    width: 45%;
+}
+
+#quoteapp {
+    font-size: 32px;
+    text-align: center;
+}
+
+#div-filters {
+    -moz-border-radius: 26;
+    -webkit-border-radius: 26;
+    background: transparent;
+    border-radius: 26px;
+    border: solid #1f628d 1px;
+    color: #3d2c2e;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 20px;
+    margin: 50px 0 10px 0;
+    min-width: 300px;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+#filter-theme {
+    background: transparent;
+    border-bottom: 1
+    border-bottom: 2px solid #000000;
+    border-radius: 0;
+    color: #3d2c2e;
+    border: 0;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 20px;
+    height: 34px;
+    padding: 5px;
+}
+
+#filter-keyword {
+    background: transparent;
+    border: 0px;
+    color: #3d2c2e;
+    font-family: "Times New Roman", Georgia, Serif;
+    font-size: 20px;
+    margin: 0 10px 0 5%;
+    padding: 10px 20px 10px 20px;
+}
+
+#quotes-list {
+    list-style: none;
+    padding: 20px 0 0 0;
+}
+
+#quotes-list li {
+    border-bottom: 1px solid #d1ccdc;
+    padding-bottom: 16px;
+    padding-top: 16px;
+    position: relative;
+    text-align: center;
+}
+
+#quotes-list li:last-child {
+    border-bottom: none;
+}
+
+#quotes-list .quote {
+    font-size: 24px;
+}
+
+#quotes-list .attribution {
+    color: #424c55;
+    font-size: 18px;
+}
+
+#quoteapp .placeholder {
+    visibility: hidden;
+}
+
+#quoteapp .status {
+    font-family: "Times New Roman", Georgia, Serif;
+    background: transparent;
+    color: #3d2c2e;
+    font-size: 24px;
+    margin: 20px 0px 30px 0px;
+}
+
+#paginate-previous {
+    border: 0px;
+    border-right: 1px solid #d1ccdc;
+    padding-right: 25px;
+}
+
+#paginate-next {
+    border: 0px;
+    border-left: solid #d1ccdc 1px;
+    padding-left: 25px;
+}
+
+#paginate-summary {
+    padding: 0px 20px 0px 20px;
+}
+
+#quoteapp button:hover {
+    color: #886f68;
+}

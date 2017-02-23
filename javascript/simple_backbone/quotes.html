@@ -1,12 +1,73 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-                    "http://www.w3.org/TR/html4/loose.dtd">
+          "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
-</head>
-<body>
+  <head>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+    <script src="./quotes.js"></script>
+    <link rel="stylesheet" href="quotes.css"/>
+  </head>
+  <body>
 
-</body>
+    <!-- Quote app -->
+    <div id="quoteapp">
+
+      <!-- Keyword search box -->
+      <div id="div-filters">
+        <input id="filter-keyword" type="text" placeholder="Search quotes by keyword">
+        <label>from</label>
+        <select id="filter-theme">
+          <option value="any">any theme</option>
+          <option value="games">games</option>
+          <option value="movies">movies</option>
+        </select>
+      </div>
+
+      <!-- Quote list -->
+      <section id="main">
+        <ul id="quotes-list"></ul>
+      </section>
+
+      <!-- Quote template -->
+      <script type="text/template" id="quote-template">
+        <div class="view">
+          <div class="quote">
+            <i>"<%- quote %>"</i>
+          </div><br>
+          <div class="attribution">
+            - <%- source %> in <i><%- context %></i> (<%- theme %>)
+          </div>
+        </div>
+      </script>
+
+      <!-- Status template -->
+      <script type="text/template" id="status-template">
+        <!-- Previous button -->
+        <% if (currentPage > 1) { %>
+          <button id="paginate-previous" class="status">Previous</button>
+        <% } else { %>
+          <label class="placeholder">Previous</label>
+        <% } %>
+
+        <!-- Summary info   -->
+        <label id="paginate-summary" class="status">
+          Page <%= currentPage %> of <%= totalPages %>
+        </label>
+
+        <!-- Next button -->
+        <% if (currentPage < totalPages) { %>
+          <button id="paginate-next" class="status">Next</button>
+        <% } else { %>
+          <label class="placeholder">Next</label>
+        <% } %>
+
+      </script>
+
+      <!-- Footer -->
+      <div class="footer">Loading quotes...</div>
+
+    </div>
+
+  </body>
 </html>
