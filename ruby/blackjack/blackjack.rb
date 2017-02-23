@@ -252,12 +252,25 @@ class DealerTest < Test::Unit::TestCase
     assert_equal dealer.showing, @five
   end
 
-  def test_player_doesnt_raise_player_blackjacked
+  def test_dealer_doesnt_raise_player_blackjacked
     dealer = Dealer.new
     dealer.deal(@jack)
     dealer.deal(@ace)
   end
 
+  def test_dealer_hit
+    dealer = Dealer.new
+    dealer.deal(@jack)
+    dealer.deal(@seven)
+    assert_equal dealer.hit?, false
+  end
+
+  def test_dealer_stay
+    dealer = Dealer.new
+    dealer.deal(@five)
+    dealer.deal(@seven)
+    assert_equal dealer.hit?, true
+  end
 end
 
 class PlayerTest < Test::Unit::TestCase
