@@ -200,11 +200,11 @@ class Game
       end
 
       if player.score > dealer.score
-        puts "Player wins!"
+        puts "Player #{player} wins #{player.score} to #{dealer.score}!"
       elsif player.score < dealer.score
-        puts "Dealer wins!"
+        puts "Dealer #{dealer} wins #{dealer.score} to #{player.score}!"
       else
-        puts "Player tied Dealer"
+        puts "Player #{player} tied Dealer #{dealer} at #{player.score}"
       end
 
     rescue BlackjackPlayerException => exception
