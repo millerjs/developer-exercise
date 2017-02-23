@@ -110,12 +110,16 @@ class Player
     @hand = Hand.new
   end
 
-  # Raises exception if card dealt causes bust or blackjack
+  # Raises exception if card dealt causes bust or blackjack.
+  #
+  # TODO: add predicate + +@dealer.blackjack?+ to condition for
+  #       raising PlayerBlackjacked.  Left out here as that would be a
+  #       deviation from the requested rule/feature
   def deal(card)
     @hand.cards << card
     if bust?
       raise PlayerBust.new(self)
-    elsif blackjack? && !@dealer.blackjack?
+    elsif blackjack?
       raise PlayerBlackjacked.new(self)
     end
   end
