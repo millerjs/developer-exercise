@@ -51,18 +51,20 @@ $(function(){
             this.currentPage = 1;
         },
 
-        // to be called whenever filters change
+        // increment can be a positive or negative integer
         incrementPage: function(increment) {
             this.currentPage += increment;
         },
 
-        updateFilterKeyword: function(value) {
-            Quotes.filterKeyword = value;
+        // Sets the keyword filter for the collection
+        updateFilterKeyword: function(keyword) {
+            Quotes.filterKeyword = keyword;
             this.resetPage();
         },
 
-        updateFilterTheme: function(value) {
-            Quotes.filterTheme = value;
+        // Sets the theme filter for the collection
+        updateFilterTheme: function(theme) {
+            Quotes.filterTheme = theme;
             this.resetPage();
         },
 
@@ -188,16 +190,20 @@ $(function(){
             }));
         },
 
+        // Sets the collection keyword filter based on input text box
         updateFilterKeyword: function() {
             Quotes.updateFilterKeyword(this.filterKeyword.val());
             this.render();
         },
 
+        // Sets the collection theme filter based on select value
         updateFilterTheme: function() {
             Quotes.updateFilterTheme(this.filterTheme.val());
             this.render();
         },
 
+        // Creates a quote view and, as a side effect, adds it to the
+        // quotes-list
         renderQuote: function(quote) {
             var view = new QuoteView({model: quote});
             this.$("#quotes-list").append(view.render().el);
